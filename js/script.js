@@ -11,12 +11,12 @@ Author - Matt Lausche
 /***
  * Array of random quotes objects to be used in random quote generation
 ***/
-let randomQuotes = [
+let quotes = [
   {quote: 'Your potential, the absolute best you’re capable of—that’s the metric to measure yourself against. Your standards are. Winning is not enough. People can get lucky and win. People can be assholes and win. Anyone can win. But not everyone is the best possible version of themselves.', source: 'Ryan Holiday'},
-  {quote: '“Impressing people is utterly different from being truly impressive.”', source: 'Ryan Holiday'},
-  {quote: '“Think progress, not perfection.”', source: 'Ryan Holiday'},
-  {quote: '“Even the most thorough change happens once choice at a time”', source: 'Charles Eisenstein', year: '2003'},
-  {quote: '“We\'re here to awaken from the illusion of separateness”', source: 'Ram Dass', citation: 'How Can I help'}
+  {quote: 'Impressing people is utterly different from being truly impressive.', source: 'Ryan Holiday'},
+  {quote: 'Think progress, not perfection.', source: 'Ryan Holiday'},
+  {quote: 'Even the most thorough change happens once choice at a time', source: 'Charles Eisenstein', year: '2003'},
+  {quote: 'We\'re here to awaken from the illusion of separateness', source: 'Ram Dass', citation: 'How Can I help'}
 ];
 
 
@@ -25,10 +25,8 @@ let randomQuotes = [
  * Function to generate a random number and return the number used to select the quote
 ***/
 function getRandomQuote() {
-  var minimum = 0;
-  var maximum = randomQuotes.length;
-  let randomNumber =  Math.floor(Math.random() * (maximum - minimum + 1));
-  return randomQuotes[randomNumber];
+  randomNumber = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNumber];
 }
 
 
@@ -51,12 +49,9 @@ function printQuote() {
   quoteString += '</p>'
 
   console.log(quoteString);
-  return quoteString
+
+document.getElementById('quote-box').innerHTML = quoteString;
 }
-
-myQuote = printQuote();
-
-document.getElementById('quote-box').innerHTML = myQuote;
 
 
 /***
